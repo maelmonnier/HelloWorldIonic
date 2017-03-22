@@ -5,6 +5,19 @@ angular.module('starter.controllers', [])
 
   .controller('SwipeCtrl', function($scope) {})
 
+  .controller('SwipeFormCtrl', function($scope, $state) {
+    $scope.authorization = {
+      username: '',
+      password : ''
+    };
+
+    $scope.signIn = function(form) {
+      if(form.$valid) {
+        $state.go('tab.dash');
+      }
+    };
+  })
+
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
