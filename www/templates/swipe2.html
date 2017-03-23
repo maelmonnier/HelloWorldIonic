@@ -1,24 +1,35 @@
 <ion-content class="padding">
-<h1>A simple newsletter form</h1>
-  <form name="authorizationForm" novalidate="" ng-submit="signIn(authorizationForm)">
+<h1 translate>NEWSLETTER_H1_SUBSCRIBE</h1>
+  <form name="newsletterForm" novalidate="" ng-submit="signIn(newsletterForm)">
     <div class="list">
 
-      <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.username.$invalid, 'no-errors' : authorizationForm.username.$valid}">
+      <label class="item item-input" ng-class="{ 'has-errors' : newsletterForm.username.$invalid, 'no-errors' : newsletterForm.username.$valid}">
         <span class="input-label">Username</span>
-        <input type="text" name="username" ng-model="authorization.username" ng-minlength="5" ng-maxlength="20" required>
+        <input type="text" name="username" ng-model="authorization.username" ng-minlength="5" ng-maxlength="50" required>
       </label>
 
-      <div class="error-container" ng-show="authorizationForm.username.$error" ng-messages="authorizationForm.username.$error">
-        <div ng-messages-include="../messages/error-list.html"></div>
+      <div class="error-container" ng-show="newsletterForm.username.$error" ng-messages="newsletterForm.username.$error">
+        <div ng-message="required">
+          Your username is required
+        </div>
+        <div ng-message="minlength, maxlength">
+          Your username must be between 5 and 50 characters long
+        </div>
       </div>
 
-      <label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.password.$invalid && authorizationForm.$submitted, 'no-errors' : authorizationForm.password.$valid  && authorizationForm.$submitted}">
-        <span class="input-label">Password</span>
-        <input type="password" name="password" ng-model="authorization.password" ng-minlength="5" ng-maxlength="20" required>
+      <label class="item item-input" ng-class="{ 'has-errors' : newsletterForm.email.$invalid && newsletterForm.$submitted, 'no-errors' : newsletterForm.email.$valid  && newsletterForm.$submitted}">
+        <span class="input-label">Email</span>
+        <input type="email" name="email" ng-model="authorization.email" ng-minlength="5" ng-maxlength="100" required>
       </label>
 
-      <div class="error-container last-error-container" ng-show="authorizationForm.password.$error && authorizationForm.$submitted" ng-messages="authorizationForm.password.$error">
-        <div ng-messages-include="../messages/error-list.html"></div>
+      <div class="error-container last-error-container" ng-show="newsletterForm.email.$error && newsletterForm.$submitted" ng-messages="newsletterForm.email.$error">
+        <div ng-message="required">
+          Your email is required
+        </div>
+        <div ng-message="minlength, maxlength">
+          Your email must be between 5 and 100 characters long
+        </div>
+        <div ng-message="email">This field must be a valid email address.</div>
       </div>
 
     </div>
