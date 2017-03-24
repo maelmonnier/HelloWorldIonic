@@ -1,4 +1,18 @@
 {
-  "MESSAGE": "Bonjour le monde",
-  "NEWSLETTER_H1_SUBSCRIBE": "Un formulaire simple pour newsletter"
+  "MESSAGE" : "Bonjour le monde",
+  "USERNAME" : "Utilisateur",
+  "EMAIL" : "Courriel",
+  "NEWSLETTER" : {
+    "H1_SUBSCRIBE" : "Formulaire pour newsletter",
+    "SIGN_BTN" : "Souscrire"
+  },
+  "ERR" : {
+    "USERNAME" : {
+      "REQUIRED" : "Votre nom d'utilisateur est requis."
+    },
+    "EMAIL" : {
+      "REQUIRED" : "Votre courriel est requis.",
+      "NOT_VALID" : "L'adresse de courriel n'est pas valide."
+    }
+  }
 }

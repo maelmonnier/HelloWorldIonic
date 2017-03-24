@@ -1,4 +1,18 @@
 {
   "MESSAGE": "Hello world",
-  "NEWSLETTER_H1_SUBSCRIBE": "A simple newsletter form"
+  "USERNAME" : "Username",
+  "EMAIL" : "Email",
+  "NEWSLETTER" : {
+    "H1_SUBSCRIBE": "A simple newsletter form",
+    "SIGN_BTN": "Sign in"
+  },
+  "ERR" : {
+    "USERNAME" : {
+      "REQUIRED" : "Your username is required."
+    }
+  },
+  "EMAIL" : {
+    "REQUIRED" : "Your email is required.",
+    "NOT_VALID" : "This field must be a valid email address."
+  }
 }

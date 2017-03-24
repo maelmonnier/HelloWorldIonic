@@ -5,16 +5,16 @@ angular.module('starter.controllers', [])
 
   .controller('SwipeCtrl', function($scope) {})
 
-  .controller('SwipeFormCtrl', function($scope, $state) {
-    $scope.authorization = {
-      username: '',
-      password : ''
+  .controller('SwipeFormCtrl', function($scope, $state, Newsletter) {
+
+    $scope.newsletter = {
+      username: 'victordupont',
+      email : 'victor@dupont.com'
     };
 
-    $scope.signIn = function(form) {
-      if(form.$valid) {
+    $scope.submit = function() {
+        Newsletter.save($scope.newsletter);
         $state.go('tab.dash');
-      }
     };
   })
 

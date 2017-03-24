@@ -5,7 +5,8 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngMessages', 'pascalprecht.translate']);
+var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngMessages',
+  'pascalprecht.translate', 'ngResource']);
 
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -111,9 +112,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
 });
 
 app.config(['$translateProvider', function ($translateProvider) {
-  $translateProvider.preferredLanguage('enUS');
+  $translateProvider.preferredLanguage('frFR');
   $translateProvider.useStaticFilesLoader({
     prefix: '/languages/',
     suffix: '.json'
   });
 }]);
+
+app.factory("Newsletter", function($resource) {
+  return $resource("http://192.168.97.194:1323/users");
+});
